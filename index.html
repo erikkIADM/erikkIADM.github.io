@@ -1,40 +1,276 @@
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<!DOCTYPE html>
+<html>
+<body style="background-color:powderblue;margin:8px;display:block">
+<head>
+<style>
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
-<h1> Kiirguse info koduleht</h1>
-<b> kiirgusinfo </b>
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-<p>
-<p>
-<!--see üleval on paragrahvi käsk, et tekiks vahe-->
-See veebileht annab ülevaate gammakiirguse levikust ja normidest Eesti erinevates piirkondades
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-<p>
-<p>
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
-<a href="http://www.ttu.ee">taltech</a>
-<p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/71/2010-kodiak-bear-1.jpg"
+table {
+  border-collapse:collapse;
+  width:90%;
+  }
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+    height:30 px;
+}
+tr:nth-child(odd){
+background-color: blue;
+}
+
+<title>Gammakiirguse andmebaas</title>
+/* <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> */
 
 
+/* päise tekitamine */
+header {
+  background-color: #777;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  height: 30px;
+}
 
-<table>
-<tr><td>esimene</td><td>teine</td></tr>
-<tr><td>esimene 2</td><td>teine</td></tr>
-<tr><td>esimene 3</td><td>teine</td></tr>
-</table>
+/* kahe tekstikasti tekitamine üksteise kõrvale */
+nav {
+  float: left;
+  width: 10%;
+  height: 300px; 
+  background-color: blue;
+  padding: 20px;
+}
 
-CSS
+/* vasakpoolse kasti teksti stiil */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-<link rel="s
-<b style="color: red; margin-left: 20 px;">katse rida</b>
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: white;
+  height: 300px; 
+}
 
-<div class="eripealkiri">
-siin on mingi jutt
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* jaluse stiil */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+</style>
+
+<!-- read in javascript libraries for parsing csv: https://github.com/okfn/csv.js  -->
+<script src="jquery.js"></script> 
+<script src="csv.js"></script>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="#home">Avaleht</a>
+  <a href="#news">Uudised</a>
+  <a href="contacts.html">Kontaktid</a>
+
 </div>
 
-<div {
-  width: 300px;
-  border: 25px solid green;
-  padding: 25px;
-  margin: 25px;
-}>
+<p>
+<meta charset="UTF-8">
+
+<header>
+  <h2 id="top" > 24 h keskmine õhu gammakiirgus Eestis</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+	  <li><a href="https://www.keskkonnaamet.ee/et/eesmargid-tegevused/kiirgus">Keskkonnaameti koduleht</a></li>
+      <p>
+	  <li><a href="https://www.iaea.org/">Aatomiagentuur IAEA</a></li>
+	  <p>
+      <li><a href="https://kese.envir.ee/kese/welcome.action">Keskkonnaseire infosüsteem</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>Gammakiirgus õhus</h1>
+    <p>Nii meis endis kui ümbritsevas keskkonnas leidub alati vähesel määral radionukliide ja seega ka ioniseerivat kiirgust, mis annab inimese nn loodusliku kiiritusdoosi. Näiteks annab kosmiline kiirgus aastas 0,3 mSv suuruse doosi, inimkehas sisalduvad radionukliidid umbes 0,2 mSv ning maapinnast ja ehitistest lähtuv kiirgus 0,5 mSv suuruse doosi. Nende doosikomponentidega peab Eestimaal arvestama iga inimene.
+Eestis on radoonist põhjustatud aastane doos siiski keskmiselt vaid 1 mSv. Looduslikule doosile võib lisanduda meditsiiniprotseduuridel aastas saadav 0,30 mSv suurune doos. Tehisradionukliididest põhjustatud keskmine doos on meil tühiselt väike. Seega on Eesti elanike keskmine kiirguskoormus umbes 2,5 mSv aastas
+    <p>Nii meis endis kui ümbritsevas keskkonnas leidub alati vähesel määral radionukliide ja seega ka ioniseerivat kiirgust, mis annab inimese nn loodusliku kiiritusdoosi. Näiteks annab kosmiline kiirgus aastas 0,3 mSv suuruse doosi, inimkehas sisalduvad radionukliidid umbes 0,2 mSv ning maapinnast ja ehitistest lähtuv kiirgus 0,5 mSv suuruse doosi. Nende doosikomponentidega peab Eestimaal arvestama iga inimene.
+Eestis on radoonist põhjustatud aastane doos siiski keskmiselt vaid 1 mSv. Looduslikule doosile võib lisanduda meditsiiniprotseduuridel aastas saadav 0,30 mSv suurune doos. Tehisradionukliididest põhjustatud keskmine doos on meil tühiselt väike. Seega on Eesti elanike keskmine kiirguskoormus umbes 2,5 mSv aastas.
+    <p>Allikas: Keskkonnaamet
+
+</styles>
+
+  </article>
+</section>
+
+<p>
+<img src="measurement.jpg" width="250" height="250">
+<img src="mobiillabor.jpg" width="500" height="250">
+<img src="Euratom 2_0.jpg" width="280" height="250">
+<img src="seadmed.jpg" width="250" height="250">
+<p>
+
+
+
+Otsitav kuupäev (dd.mm.yyyy):
+<input type="text" id="filter">
+<button type="button" onclick="filtreeri()">filtreeri!</button>
+Sisesta Pärnut puudutav väärtus (mSv):
+<input type="text" id="filter3">
+<button type="button" onclick="filtreeri()">filtreeri!</button>
+<p>
+Sisesta Tallinna puudutav väärtus (mSv):
+<input type="text" id="filter2">
+<button type="button" onclick="filtreeri()">filtreeri!</button>
+<p>
+
+<div id="result"></div>
+
+<p>
+Andmed võetakse csv failist <a href="data.csv">data.csv</a>.
+<p>
+Programm kasutab <a href="https://github.com/okfn/csv.js">csv.js</a> teeki csv faili parsimiseks ja siis siin
+lehe lähtekoodis olev meie oma <tt>processdata</tt> programm, mida saad ise edasi ehitada.
+<script>
+
+// processdata takes data rows, builds html string and shows it in the div above
+var sisu;
+var sisu2;
+var sisu3;
+
+
+function filtreeri() {  
+  sisu=document.getElementById("filter").value;
+  sisu2=document.getElementById("filter2").value;
+  sisu3=document.getElementById("filter3").value;
+
+  //alert(sisu);
+  drawdata();
+}
+
+function processdata(rows) {
+  
+  var rownr, colnr, row, el;
+  var result;
+  
+  // build the result html string
+  result="<table>";
+  // loop over all rows
+  for(rownr=0; rownr<rows.length; rownr++) {    
+    row=rows[rownr];
+	if (rownr==0 ||
+	     ((!sisu || row[0]==sisu)) &&
+		 (!sisu3 || row[10]==sisu3) &&
+         (!sisu2 || row[15]==sisu2) )	{
+		result=result+"\n<tr>";	
+		// loop over columns in one row
+		for(colnr=0; colnr<row.length; colnr++) {
+		  el=row[colnr];		  
+		  if (rownr==0) {
+			result=result+"<th><b>"+el+"</b></th>"; 
+		  } else {
+			result=result+"<td>"+el+"</td>";
+		  }				  
+		}
+		result=result+"</tr>";
+    }		 
+  } 
+    
+	
+	
+	// put the result html string into the div on the page
+  //console.log(result);
+  document.getElementById("result").innerHTML=result;  
+}
+
+// take raw csv data, parse it into rows and then call processdata with the result
+// we use the CSV library from https://github.com/okfn/csv.js 
+
+function drawdata() {
+  CSV.fetch({
+    // several options to give input, by default we use the file data.csv
+    url: 'data.csv'
+    
+    // alternatively put raw data here like this:
+    /*data: 
+"Date,Kunda,Ristna,Vaike-Maarja,Toravere,Sorve,Viljandi\n"+
+"01.01.2018,55,38,63,56,35,45\n"+
+"02.01.2018,56,40,64,58,36,46\n"+
+"03.01.2018,54,38,63,55,35,45\n"+
+"04.01.2018,55,38,64,57,35,45\n"+
+"05.01.2018,57,41,66,58,36,47\n"+
+"06.01.2018,56,38,65,57,36,47\n"+
+"07.01.2018,56,41,65,58,37,47\n"*/
+
+
+   
+    // also an alternative
+    //file: an HTML 5 file object
+    
+    // optional options about structure of the CSV file
+    // following the CSV Dialect Description Format 
+    // https://frictionlessdata.io/specs/csv-dialect/
+    /*
+    dialect: {
+      ...
+    }
+    */
+  }
+).done(function(dataset) {  
+  // console.log(dataset); // optional debugging    
+  var allrows;
+  // put the dataset field list and dataset records into one array of all rows
+  allrows=dataset.records;
+  allrows.unshift(dataset.fields);  
+  // call our program for building html
+  processdata(allrows);
+});
+}
+drawdata();
+
+
+
+</script>
+<p>
+<a href="#top">Mine algusesse</a>
+<footer>
+  <p>TalTech laboritöö. Marika Popp & Erik Kosenkranius 2019</p>
+</footer>
+
+</body>
+</html> 
